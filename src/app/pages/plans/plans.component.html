@@ -18,21 +18,34 @@
   <div class="row">
     <span class="table-container">
       <div class="row flex-centered">
-        <div class="w-100 fullwidth-table">
+        <div class="w-100 fullwidth-table" (window:resize)="onResize($event)">
           <mat-card class="features-card">
+            <mat-radio-group color="primary" class="packageGroup">
+              <mat-radio-button (change)="packageChanged($event)" class="answer" disableRipple="true"
+              color="primary" value="1" [checked]="litePackage">
+                Lite Package
+              </mat-radio-button><br>
+              <mat-radio-button (change)="packageChanged($event)" class="answer" disableRipple="true"
+              color="primary" value="2" [checked]="fullPackage">
+                Full Package
+              </mat-radio-button><br>
+              <mat-radio-button (change)="packageChanged($event)" class="answer" disableRipple="true"
+              color="primary" value="3" [checked]="professional">
+                Professional
+              </mat-radio-button><br>
+            </mat-radio-group>
             <table class="fullwidth c-table">
               <tr>
-                <td>
+                <td class="td-special">
                 </td>
 
-                <td class="package-name">
+                <td class="package-name" *ngIf="litePackage">
                   Lite Package
                 </td>
-                <td class="package-name">
+                <td class="package-name" *ngIf="fullPackage">
                   Full Package
                 </td>
-                
-                <td class="package-name">
+                <td class="package-name" *ngIf="professional">
                   Professional
                 </td>
               </tr>
@@ -44,18 +57,17 @@
                   <a *ingIf href="#" (click)="openSBUEstimator($event)" class="">help me estimate</a>
                 </td>
 
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="litePackage">
                   <mat-icon *ngIf="item.Lite == true" class="primaryColor big">done</mat-icon>
                   <mat-icon *ngIf="item.Lite == false" class="primaryColor big red">close</mat-icon>
                   <span *ngIf="item.Lite != false && item.Lite != true" class="primaryColor">${{item.Lite}}</span>
                 </td>
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="fullPackage">
                   <mat-icon *ngIf="item.Full == true" class="primaryColor big">done</mat-icon>
                   <mat-icon *ngIf="item.Full == false" class="primaryColor big red">close</mat-icon>
                   <span *ngIf="item.Full != false && item.Full != true" class="primaryColor">${{item.Full}}</span>
                 </td>
-                
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="professional">
                   <mat-icon *ngIf="item.Professional == true" class="primaryColor big">done</mat-icon>
                   <mat-icon *ngIf="item.Professional == false" class="primaryColor big red">close</mat-icon>
                   <span *ngIf="item.Professional != false && item.Professional != true" class="primaryColor"><span *ngIf="i==29">$</span>{{item.Professional}}</span>
@@ -70,45 +82,43 @@
                     <mat-radio-button (change)="cloudChanged($event)" class="answer" disableRipple="true"
                     [matTooltip]="tooltipA" matTooltipClass="material-tooltip"
                       color="primary" value="1">
-                      CloudLive domain Option A
-                      <br>HD 1080p streaming 1000 GB Data Transfer
+                      CloudLive domain <br class="mb-499">Option A
+                      <br>HD 1080p streaming <br class="mb-619">1000 GB Data Transfer
                     </mat-radio-button><br>
                     <mat-radio-button (change)="cloudChanged($event)" class="answer" disableRipple="true"
                     [matTooltip]="tooltipB" matTooltipClass="material-tooltip"
-                      color="primary" value="2">CloudLive domain Option B <br>HD 1080p
-                      streaming 1500 GB Data Transfer</mat-radio-button><br>
+                      color="primary" value="2">CloudLive domain <br class="mb-499">Option B <br>HD 1080p
+                      streaming <br class="mb-619">1500 GB Data Transfer</mat-radio-button><br>
                     <mat-radio-button (change)="cloudChanged($event)" class="answer" disableRipple="true"
                     [matTooltip]="tooltipC" matTooltipClass="material-tooltip"
-                      color="primary" value="3">Private domain <br>HD 1080p streaming Data
+                      color="primary" value="3">Private domain <br>HD 1080p streaming <br class="mb-619">Data
                       Transfer 2.5 TB</mat-radio-button><br>
                   </mat-radio-group>
                 </td>
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="litePackage">
                   <mat-icon *ngIf="cloudPriceFirst == '0'" class="primaryColor big red">close</mat-icon>
                   <span *ngIf="cloudPriceFirst !== '0'" class="primaryColor">{{cloudPriceFirst}}</span><br>
                   <span *ngIf="cloudPriceMonthly !== '0'" class="primaryColor">{{cloudPriceMonthly}}</span>
                 </td>
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="fullPackage">
                   <mat-icon *ngIf="cloudPriceMonthly == '0'" class="primaryColor big red">close</mat-icon>
                   <span *ngIf="cloudPriceFirst !== '0'" class="primaryColor">{{cloudPriceFirst}}</span><br>
                   <span *ngIf="cloudPriceMonthly !== '0'" class="primaryColor">{{cloudPriceMonthly}}</span>
                 </td>
-                
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="professional">
                   <span class="primaryColor">Price tba</span>
                 </td>
               </tr>
               <tr>
                 <td class="title1 op special-shape cloud-live">
                 </td>
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="litePackage">
                   <button class="checkout-btn" (click)="toCheckout('lite')">Purchase Now</button>
                 </td>
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="fullPackage">
                   <button class="checkout-btn" (click)="toCheckout('full')">Purchase Now</button>
                 </td>
-                
-                <td class="subtotal">
+                <td class="subtotal" *ngIf="professional">
                   <button class="checkout-btn" (click)="callSupport()">Call</button>
                 </td>
               </tr>

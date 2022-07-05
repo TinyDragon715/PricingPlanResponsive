@@ -1002,6 +1002,118 @@ img.logo {
   }
 }
 
+.mb-619, .mb-499 {
+  display: none;
+}
+
+@media screen and (max-width: 619px) {
+  .mb-619 {
+    display: block;
+  }
+
+  .c-table {
+    .title1.op, .td-special {
+      width: 230px !important;
+    }
+
+    .title1.op {
+      padding: 0px 40px 0px 30px;
+    }
+
+    .cloud-live {
+      padding: 20px 40px 20px 30px !important;
+    }
+
+    .minor {
+      .title1.op {
+        width: 200px !important;
+        margin: 0px 0px 0px 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .mb-499 {
+    display: block;
+  }
+
+  .packageGroup .answer {
+    width: 30% !important;
+  }
+
+  .c-table {
+    .title1.op, .td-special {
+      width: 190px !important;
+    }
+
+    .title1.op {
+      padding: 0px 40px 0px 20px;
+    }
+
+    .cloud-live {
+      padding: 20px 40px 20px 20px !important;
+    }
+
+    .minor {
+      .title1.op {
+        width: 170px !important;
+        margin: 0px 0px 0px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .c-table {
+    .title1.op, .td-special {
+      width: 155px !important;
+    }
+
+    .title1.op {
+      padding: 0px 40px 0px 15px;
+    }
+
+    ::ng-deep .mat-radio-label{
+      font-size: 14px !important;
+    }    
+
+    .cloud-live {
+      padding: 20px 40px 20px 15px !important;
+    }
+
+    .minor {
+      .title1.op {
+        width: 145px !important;
+        margin: 0px 0px 0px 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 379px) {
+  .c-table {
+    .title1.op, .td-special {
+      width: 150px !important;
+    }
+
+    .title1.op {
+      padding: 0px 40px 0px 10px;
+    }
+
+    .cloud-live {
+      padding: 20px 40px 20px 10px !important;
+    }
+
+    .minor {
+      .title1.op {
+        width: 140px !important;
+        margin: 0px 0px 0px 10px;
+      }
+    }
+  }
+}
+
 .w-50 {
   width: 50%;
   color: white !important;
@@ -1061,10 +1173,34 @@ tr.full{
   border: 0px solid #e7e7e7;
 }
 
+.packageGroup {
+  display: none;
+}
+
 //table
 .fullwidth-table {
   width: 1100px;
   border: 0px solid #e7e7e7;
+}
+@media screen and (max-width: 1099px) {
+  .fullwidth-table {
+    width: inherit;
+  }
+  
+  .packageGroup {
+    padding-top: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .packageGroup .answer {
+    width: 20%;
+  }
+
+  .packageGroup ::ng-deep .mat-radio-label {
+    justify-content: center !important;
+  }
 }
 
 table,
@@ -1082,6 +1218,11 @@ td {
   justify-content: center;
   align-items: center;
   background-color: #f9fbfd;
+}
+@media screen and (max-width: 1099px) {
+  .flex-centered{
+    align-items: inherit;
+  }
 }
 
 .checkout-btn{
@@ -1134,11 +1275,20 @@ td {
 
 .subtotal{
   font-size: 24px;
-    color: #2b2b2b;
-    width: 30%;
-    text-align: center;
+  color: #2b2b2b;
+  width: 30%;
+  text-align: center;
 }
-
+@media screen and (max-width: 1099px) {
+  .subtotal {
+    width: inherit;
+  }
+}
+@media screen and (max-width: 429px) {
+  .subtotal {
+    font-size: 20px;
+  }
+}
 
 .cancel-btn{
   position: fixed;
@@ -1409,13 +1559,19 @@ input[type=number] {
     width: calc(100% - 110px) !important;
   }
 }
+
 .package-name{
   font-weight: 600;
   color: #2b2b2b;
   width: 30%;
   text-align: center;
-
 }
+@media screen and (max-width: 1099px) {
+  .package-name{
+    width: inherit;
+  }
+}
+
 ::ng-deep .mat-radio-button,
 ::ng-deep .mat-radio-button .mat-radio-label{
   width:100%;

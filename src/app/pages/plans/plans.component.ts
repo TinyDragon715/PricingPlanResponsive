@@ -19,6 +19,9 @@ export class PlansComponent implements OnInit {
   cloudPriceFirst = '0';
   cloudPriceMonthly = '0';
   cloudPlan = '0';
+  litePackage: boolean = true;
+  fullPackage: boolean = true;
+  professional: boolean = true;
   currentUser;
   currentSub;
   tooltipA = 'HD 1080p streaming 1000 GB Data Transfer\nWebsite Embed Code\nVideo On Demand Storage\n1TB Auto-recording\nLive Chat\nStreaming Analytics\nEmail Support  \n    Text Support  \n    1 hour of phone support  \n    30 mins of training  \nSetup $299.00';
@@ -48,6 +51,11 @@ export class PlansComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (window.innerWidth <= 1099) {
+      this.litePackage = true;
+      this.fullPackage = false;
+      this.professional = false;
+    }
 
     this.currentUser = this.storeService.get('currentUser');
     this.storeService.init('default');
@@ -83,6 +91,40 @@ export class PlansComponent implements OnInit {
       }
     }
     console.log(event);
+  }
+
+  onResize(event) {
+    if (window.innerWidth >= 1100) {
+      this.litePackage = true;
+      this.fullPackage = true;
+      this.professional = true;
+    } else {
+      if (this.litePackage && this.fullPackage && this.professional) {
+        this.litePackage = true;
+        this.fullPackage = false;
+        this.professional = false;
+      }
+    }
+  }
+
+  packageChanged(event) {
+    if (event) {
+      if (event.value == '1') {
+        this.litePackage = true;
+        this.fullPackage = false;
+        this.professional = false;
+      }
+      if (event.value == '2') {
+        this.litePackage = false;
+        this.fullPackage = true;
+        this.professional = false;
+      }
+      if (event.value == '3') {
+        this.litePackage = false;
+        this.fullPackage = false;
+        this.professional = true;
+      }
+    }
   }
 
   onCancel() {
