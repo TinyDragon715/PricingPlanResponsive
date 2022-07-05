@@ -1,0 +1,469 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng-material": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "aot": true,
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ],
+            "styles": [
+              "src/styles/styles.scss",
+              "src/assets/styles/broadcast-flowplayer.scss",
+              "node_modules/flag-icon-css/css/flag-icons.min.css"
+            ],
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+              "src/assets/scripts/flowplayer.min.js",
+              "src/assets/scripts/flowplayer.hlsjs.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            },
+            "conference": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.conference.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/conference.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/conference.scss"
+                }
+              ]
+            },
+            "conference.prod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.conference.prod.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/conference.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/conference.scss"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "15mb",
+                  "maximumError": "25mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            },
+            "conference.qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.conference.qa.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/conference.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/conference.scss"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            },
+            "school": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.school.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/school.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/school.scss"
+                }
+              ]
+            },
+            "school.prod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.school.prod.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/school.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/school.scss"
+                }
+              ]
+            },
+            "school.qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.school.qa.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/school.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/school.scss"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            },
+            "radio": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.radio.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/radio.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/radio.scss"
+                }
+              ]
+            },
+            "radio.prod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.radio.prod.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/radio.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/radio.scss"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            },
+            "radio.qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.radio.qa.ts"
+                },
+                {
+                  "replace": "src/index.html",
+                  "with": "src/radio.html"
+                },
+                {
+                  "replace": "src/styles/color-schemes/_default.scss",
+                  "with": "src/styles/color-schemes/radio.scss"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            },
+            "registration.prod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/environments/environment.registration.ts",
+                  "with": "src/environments/environment.registration.prod.ts"
+                }
+              ]
+            },
+            "registration.qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                },
+                {
+                  "replace": "src/environments/environment.registration.ts",
+                  "with": "src/environments/environment.registration.qa.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-material:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-material:build:production"
+            },
+            "conference": {
+              "browserTarget": "ng-material:build:conference"
+            },
+            "conference.prod": {
+              "browserTarget": "ng-material:build:conference.prod"
+            },
+            "conference.qa": {
+              "browserTarget": "ng-material:build:conference.qa"
+            },
+            "school": {
+              "browserTarget": "ng-material:build:school"
+            },
+            "school.prod": {
+              "browserTarget": "ng-material:build:school.prod"
+            },
+            "school.qa": {
+              "browserTarget": "ng-material:build:school.qa"
+            },
+            "radio": {
+              "browserTarget": "ng-material:build:radio"
+            },
+            "radio.prod": {
+              "browserTarget": "ng-material:build:radio.prod"
+            },
+            "radio.qa": {
+              "browserTarget": "ng-material:build:radio.qa"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-material:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js"
+            ],
+            "styles": [
+              "styles.scss"
+            ],
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ng-material-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "ng-material:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-material:serve:production"
+            },
+            "conference": {
+              "devServerTarget": "ng-material:serve:conference"
+            },
+            "conference.prod": {
+              "devServerTarget": "ng-material:serve:conference.prod"
+            },
+            "school": {
+              "devServerTarget": "ng-material:serve:school"
+            },
+            "school.prod": {
+              "devServerTarget": "ng-material:serve:school.prod"
+            },
+            "radio": {
+              "devServerTarget": "ng-material:serve:radio"
+            },
+            "radio.prod": {
+              "devServerTarget": "ng-material:serve:radio.prod"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-material",
+  "cli": {
+    "analytics": "fb4d0651-f7ea-4a15-bfe0-3918064f6257"
+  }
+}

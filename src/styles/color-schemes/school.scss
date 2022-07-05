@@ -1,0 +1,103 @@
+@import '../mixin';
+$orgType:'school';
+$default-text:14px;
+$sm-text:12px;
+$lg-text:16px;
+$body-bg:#f2f2f2;
+$body-bg-second:#546694;
+$topbar-bg:#546694;
+$topbar-fonts-color:#ffffff;
+$sidebar-bg:#465294;
+$sidebar-fonts-color:#fff;
+$card-bg:#fff;
+$card-border:#e4e3e3;
+$white:#fff;
+$black:#000;
+$select-color:rgba($black, .1);
+$border-color:rgba($black, .1);
+$table-border-color:#e6e6e6;
+$fonts-color:#393a3e;
+$primary:#546694;
+$primary-second:#393a3e;
+$primary-third:#1894ff;
+$primary-fourth:#00bcd4;
+$secondory:#ffffff;
+$secondory-text:#02549a;
+$success:#16be9a;
+$danger:#f35800;
+$warning:#ff7403;
+$info:#a3bde1;
+$title:#a3bde1;
+$popup: #f1f1f1;
+$popup-header: #151a3f;;
+body {
+    background: $body-bg;
+}
+
+.bg-default {
+    @include linear-gradient(to top right, darken($card-bg, 40%), darken($card-bg, 30%));
+}
+
+.bg-primary {
+    @include linear-gradient(to top right, $primary, #ffd17c);
+}
+
+.bg-success {
+    @include linear-gradient(to top right, $success, #42e697);
+}
+
+.bg-danger {
+    @include linear-gradient(to top right, $primary, #ffd17c);
+}
+
+.bg-warning {
+    @include linear-gradient(to top right, $warning, #fac980);
+}
+
+.bg-info {
+    @include linear-gradient(to top right, $info, #15f8bf);
+}
+.mat-raised-button[disabled] {
+    cursor: not-allowed !important;
+    color: rgba(255, 255, 255, 0.26) !important;
+}
+
+button.mat-raised-button {
+    color: $primary;
+    font-size: 16px;
+}
+button.mat-raised-button:hover{
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+button.mat-default {
+    @include linear-gradient(to top right, darken($card-bg, 40%), darken($card-bg, 30%));
+    color: $white;
+}
+
+button.mat-primary {
+    @include linear-gradient(to top right, $primary, $primary-second);
+    color: $white;
+}
+button.mat-success {
+    @include linear-gradient(to top right, $success, #42e697);
+    color: $white;
+}
+
+button.mat-danger {
+    @include linear-gradient(to top right, $primary, $primary-second);
+    color: white;
+    // font-weight: bold;
+    font-size: 16px;
+}
+
+button.mat-warning {
+    @include linear-gradient(to top right, $warning, #fca063);
+    color: $white;
+}
+
+button.mat-info {
+    @include linear-gradient(to top right, $primary, $info);
+    color: $white;
+    // font-weight: bold;
+    font-size: 16px;
+}

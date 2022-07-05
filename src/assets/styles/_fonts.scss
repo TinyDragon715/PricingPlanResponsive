@@ -1,0 +1,38 @@
+
+@font-face{
+    font-family: lato-light;
+    src: url( $assets_path + '/fonts/Lato/Lato-Light.ttf') ;
+}
+
+@font-face{
+    font-family: lato;
+    src: url($assets_path +'/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face{
+    font-family: lato-bold;
+    src: url($assets_path +'/fonts/Lato/Lato-Bold.ttf');
+}
+
+@font-face{
+    font-family: lato-black;
+    src: url($assets_path +'/fonts/Lato/Lato-Black.ttf');
+}
+
+@font-face{
+    font-family: lato-bold-italic;
+    src: url($assets_path + '/fonts/Lato/Lato-BoldItalic.ttf');
+}
+
+@font-face{
+    font-family: lato-italic;
+    src: url($assets_path + '/fonts/Lato/Lato-Italic.ttf');
+}
+
+$font-base: 'Roboto', sans-serif;
+// font-weight: 400;'lato';
+$font-light: 'Roboto', sans-serif;
+$font-bold: 'Roboto', sans-serif;
+$font-black: 'Roboto', sans-serif;
+$font-italic: 'Roboto', sans-serif;
+$font-boldItalic: 'Roboto', sans-serif;

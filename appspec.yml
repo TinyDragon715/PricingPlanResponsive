@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/deployment
+hooks:
+  ApplicationStop:
+    - location: scripts/deletedir.sh
+      timeout: 120
+      runas: ubuntu
+  AfterInstall:
+    - location: scripts/unzipfile.sh
+      timeout: 120
+      runas: ubuntu
+  # AfterInstall:
+  #   - location: scripts/linkdirectories.sh
+  #     timeout: 120
+  #     runas: ubuntu
+  # ValidateService:
+  #   - location: scripts/validateservice.sh
+  #     timeout: 120
+  #     runas: ubuntu

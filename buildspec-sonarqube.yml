@@ -1,0 +1,24 @@
+version: 0.2
+phases:
+  install:
+    run-as: root
+    commands:
+      - apt-get update
+      - apt-get install jq
+      - apt-get install unzip
+      - mkdir /downloads/sonarqube -p
+      - cd /downloads/sonarqube
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip
+      - unzip sonar-scanner-cli-4.5.0.2216-linux.zip
+      - mv sonar-scanner-4.5.0.2216-linux /opt/sonar-scanner
+      - export PATH=$PATH:/opt/sonar-scanner/bin/
+  build:
+    run-as: root
+    commands:
+      - cd $CODEBUILD_SRC_DIR
+      - sonar-scanner -X -Dsonar.projectKey=Stellar-Frontend -Dsonar.sources=. -Dsonar.host.url=http://sonarqube.interactivelife.me:9000 -Dsonar.login=b2f46dace6e6012d9868e8e47559589584cc1584
+      - sleep 30s
+  post_build:
+    run-as: root
+    commands:
+      #- bash $CODEBUILD_SRC_DIR/scripts/check_sonar_status.sh

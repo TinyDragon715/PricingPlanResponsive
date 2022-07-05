@@ -1,0 +1,30 @@
+version: 0.2
+phases:
+  install:
+    run-as: root
+    commands:
+      - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+      - apt-get install -y nodejs
+      - cd $CODEBUILD_SRC_DIR
+      - npm install
+      - apt install zip unzip
+  build:
+    run-as: root
+    commands:
+      - cd $CODEBUILD_SRC_DIR
+      - cp $CODEBUILD_SRC_DIR/src/styles/color-schemes/conference.scss $CODEBUILD_SRC_DIR/src/styles/color-schemes/_default.scss
+      - npm run build-conference
+      - cp $CODEBUILD_SRC_DIR/src/styles/color-schemes/school.scss $CODEBUILD_SRC_DIR/src/styles/color-schemes/_default.scss
+      - npm run build-school
+      - cp $CODEBUILD_SRC_DIR/src/styles/color-schemes/radio.scss $CODEBUILD_SRC_DIR/src/styles/color-schemes/_default.scss
+      - npm run build-radio
+  post_build:
+    run-as: root
+    commands:
+      - cd $CODEBUILD_SRC_DIR 
+      - zip -r dist.zip dist 
+artifacts:
+  files:
+    - dist.zip
+    - appspec.yml
+    - scripts/*

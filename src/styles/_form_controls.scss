@@ -1,0 +1,101 @@
+$assets_path : '~/assets';
+@import '../assets/styles/fonts';
+$font-medium: $font-base;
+
+$color-primary: #1f265e;
+$color-grey: #e9e8e8;
+$color-dark-grey: #707070;
+$bg-color: #FAFAFA;
+$color-warn: #8d1313;
+$color-blue-light: #4B5DE3;
+$color-dark: #101114;
+$color-light-grey: #c0c0c0;
+
+
+.form-group-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1rem 0;
+    // justify-content: space-between;
+    
+    &.half{
+        width: 45%;
+
+        input{
+            width: 100%;
+        }
+    }
+    
+    label{
+        font-family: $font-light;
+        font-size: 15px;
+        color: $color-dark;
+        margin-bottom: 12px;
+
+        &.invalid{
+            color: $color-warn !important;
+
+            &::after{
+                content: " *";
+            }
+        }
+        
+        &.invalid-15{
+            color: $color-warn !important;
+
+            &::after{
+                content: " * (min. 15 letters)";
+            }
+        }
+    }
+
+    input, textarea, select{
+        box-sizing: border-box;
+        height: 1rem;
+        padding: 0.8rem 0.3rem;
+        width: 100%;
+        background-color: $color-grey;
+        border: none;
+        outline: none;
+        height: auto;
+    }
+
+    .form-control{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 70%;
+
+        input{
+            width: 100%;
+        }
+    }
+}
+
+.form-actions{
+    text-align: right;
+
+    
+
+    button{
+        margin: 0 0.5rem;
+    }
+}
+
+:host ::ng-deep .primary{
+    background-color: $color-primary;
+    color: white;
+}
+
+:host ::ng-deep .cancel-btn{
+    background-color: $color-warn;
+    color: white;
+}

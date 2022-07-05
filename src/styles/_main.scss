@@ -1,0 +1,202 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+input,select {
+  font-family: 'Roboto', sans-serif;
+}
+
+// body {
+//   scrollbar-width: thin;
+//   scrollbar-color: $topbar-fonts-color $topbar-bg;
+// }
+// body::-webkit-scrollbar {
+//   width: 1px;
+// }
+// body::-webkit-scrollbar-track {
+//   background: $topbar-bg;
+// }
+// body::-webkit-scrollbar-thumb {
+//   background-color: $topbar-fonts-color;
+//   border-radius: 20px;
+//   // border: 1px solid $topbar-bg;
+// }
+.main-container {
+    // position: absolute;
+    // top: 64px;
+    // left: 250px;
+    // right: 0;
+    // bottom: 0;
+    padding: 55px 10px 0px 10px;
+}
+.tooltip-red {
+  background: $primary;
+}
+.defaultColor{
+  color: $primary;
+}
+.greenColor{
+  color: green;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.open-container > * {
+  width: 100%;
+}
+
+.footer {
+  position: absolute;
+  font-size: 1em;
+  right: 10px;
+  bottom: 10px;
+  color: $fonts-color;
+  a{
+    color: $secondory-text;
+    text-decoration: none;
+  }
+  a:hover{
+    color: $secondory-text;
+    text-decoration: underline;
+  }
+}
+.myPreviewClass .mat-dialog-container {
+      background-color: transparent;
+      box-shadow: none;
+      overflow: hidden;
+}
+
+.hint {
+  cursor: help !important;
+  border: 3px solid #1894ff !important;
+}
+
+.hint-tooltip {
+  font-size: 12pt;
+  background-color: darkgrey;
+}
+
+//tooltip
+.tooltip-example {
+  text-align: center;
+  padding: 0 50px;
+}
+.tooltip-example [tooltip] {
+  display: inline-block;
+  margin: 50px 20px;
+  width: 180px;
+  height: 50px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  line-height: 50px;
+  text-align: center;
+}
+.ng-tooltip {
+  position: absolute;
+  max-width: 150px;
+  font-size: 14px;
+  text-align: center;
+  color: #f8f8f2;
+  padding: 3px 8px;
+  background: #282a36;
+  border-radius: 4px;
+  z-index: 1000;
+  opacity: 0;
+}
+.ng-tooltip:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+}
+.ng-tooltip-top:after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-color: black transparent transparent transparent;
+}
+.ng-tooltip-bottom:after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-color: transparent transparent black transparent;
+}
+.ng-tooltip-left:after {
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-color: transparent transparent transparent black;
+}
+.ng-tooltip-right:after {
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-color: transparent black transparent transparent;
+}
+.ng-tooltip-show {
+  opacity: 1;
+}
+
+.dragBoundary{
+  height: 90vh;
+}
+
+.bdc-walk-popup {
+  // add custom styles to popups
+  .title{
+     .header{
+       color: $primary-third !important;
+     }
+  }
+  .buttons button{
+    color: $primary-third !important;
+  }
+  .container{
+    color: $primary !important;
+  }
+}
+
+.bdc-walk-dialog {
+  // add custom styles to dialogs
+
+  mat-dialog-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 35px 40px;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 0 0 25px 0;
+  }
+  .buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button.mat-raised-button {
+      &:not(:disabled) {
+        background-color: $primary;
+      }
+      min-width: 180px;
+      height: 40px;
+      font-weight: bold;
+    }
+
+    a {
+      color: $primary !important;
+      text-decoration: none !important;
+      margin-top: 15px;
+    }
+  }
+}
+h1{
+  font-weight: 400;
+  font-size: 2.5em;
+}

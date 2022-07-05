@@ -1,0 +1,18 @@
+@import '../../styles/conf';
+.global-chat-container, .agenda {
+    position: absolute; 
+    top:0; 
+    left: 0; 
+    z-index: 999; 
+    transform: translate(50%,25%); 
+    width: 50%;
+}
+
+.global-chat-container-in-book {
+    position: absolute; 
+    top:0; 
+    left: 0; 
+    z-index: 1; 
+    transform: translate(50%,75%); 
+    width: 50%;
+}

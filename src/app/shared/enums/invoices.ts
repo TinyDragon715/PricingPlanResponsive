@@ -1,0 +1,1 @@
+export enum InvoiceStatus{PAID = 1, UNPAID, UPCOMING}

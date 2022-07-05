@@ -1,0 +1,1 @@
+export enum userType{ILI_USER = 1, CLIENT, AGENT}
